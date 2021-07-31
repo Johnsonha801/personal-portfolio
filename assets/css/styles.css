@@ -1,0 +1,375 @@
+/* Defining CSS Variables */
+:root {
+    --bg-color: #EDEEF8;
+    --title-bg-color: #d4af37;
+    --primary-font-color: #2d4061;
+    --secondary-font-color: #31343E;
+}
+/* All element shared styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Body styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--primary-font-color);
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* Header Styles */
+header {
+    width: 100%;
+    padding: 15px 0;
+    background-color: #31343E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /*position: -webkit-sticky;
+    position: sticky;*/
+    z-index: 9999;
+    top: 0;
+}
+/* Site Logo Section */
+header .logo-section a {
+    text-decoration: none;
+    color: var(--secondary-font-color);
+    font-weight: bold;
+    background-color: var(--title-bg-color);
+    padding: 5px 5px 5px 50px;
+}
+/* Main Navigation Styles */
+header nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+header nav ul {
+    list-style-type: none;
+}
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+/* Main Navigation Links  */
+header nav ul li a {
+    text-decoration: none;
+    color: var(--title-bg-color);
+    font-size: 1.5vw;
+    padding: 5px 10px;
+    border-bottom: 2px solid var(--title-bg-color);
+} 
+/* Main Navigation Links on Hover */
+header nav ul li a:hover {
+    background-color: var(--title-bg-color);
+    border-radius: 15px;
+    border-bottom: none;
+    color: var(--secondary-font-color);
+} 
+/* Hero Section Styles */
+.hero {
+    height: 400px;
+    width: 100%;
+    background-image: url("../images/Background.PNG");
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: center;
+}
+/* Hero Section Inner Content */
+.hero-content {
+    margin-bottom: 25px;
+    background-color: rgba(0,0,0,.6);
+}
+/* Hero Profile Picture */
+.profile-picture {
+    background-image: url("../images/profile-pic.png");
+    background-size: cover;
+    border-radius: 60%;
+    width: 230px;
+    height: 250px;
+    margin: 15px auto;
+}
+/* Section Styles */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 50px;
+    margin-bottom: 25px;
+}  
+/* Section Titles Styles */
+.section-title {
+    border-right: 3px solid var(--primary-font-color);
+    flex: 1 25%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 25px;
+    text-align: right;
+}
+.section-title h1 {
+    font-size: 50px;
+}
+/* Section Content Containers */
+.section-content {
+    flex: 1 70%;
+    padding:  0 25px;
+    display: flex;
+    align-items: center;
+}
+.section-content p {
+    padding: 10px 0;
+}
+/* Project Tile Grid Container */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    position: relative;
+}
+/* Project Tile in Grid */
+.project-item {
+    border: 3px solid var(--title-bg-color);
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+    color: var(--primary-font-color);
+    position: relative;
+    z-index: 1;
+}
+/* Project Tile Image - Change Opacity on hover */
+.project-item:hover .project-bg {
+    opacity: 1;
+}
+/* Project Tile Image */
+.project-bg {
+    position: absolute;
+    z-index: -1;
+    top:0;
+    left: 0;
+    background-size: cover;
+    opacity: 0.4;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.6s;
+}
+/* Project Item 1 - Make larger than other tiles */
+.project-item-1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2;
+}
+/* Setting Project Tile Images */
+.project-bg-1 {
+    background-image: url("../images/HT.jpeg");
+}
+.project-bg-2 {
+    background-image: url("../images/Bd.jpeg");
+}
+.project-bg-3 {
+    background-image: url("../images/refractor.jpeg");
+}
+.project-bg-4 {
+    background-image: url("../images/runbuddy.PNG");
+}
+.project-bg-5 {
+    background-image: url("../images/extra.JPG");
+}
+/* Project Description inside each Project Tile */
+.project-title {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+}
+/* Contact Section Container */
+.contact-container {
+    width: 100%;
+}
+/* Contact Links List */
+#contact-me ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px;
+}
+/* Contact Links List Item */
+#contact-me ul li {
+    padding: 15px 5px;
+}
+/* Contact Link */
+#contact-me ul li a {
+    padding: 5px;
+    color: var(--primary-font-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+/* Set Link Style AFTER */
+#contact-me ul li a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px var(--primary-font-color);  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+/* Annimate Links on Hover */
+#contact-me ul li a:hover:after {
+    transform: scalex(1);
+}
+/* Default box around titles on site */
+.title-box {
+    background-color: var(--title-bg-color);
+    padding: 10px;
+}
+/* Resume Content */
+.resume {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
+/* Resume Title of Page */
+.resume-title {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 50px;
+}
+.resume-title h1 {
+    width: 75%;
+    border-bottom: 3px solid var(--primary-font-color);
+    margin: 0 auto;
+}
+/* Resume header elements */
+.resume h2, .resume h3, .resume h4 {
+    margin: 25px 0;
+}
+.resume h3 {
+    border-top: 1px solid var(--primary-font-color);
+    width: 100%;
+    padding-top: 30px;
+}
+/* resume paragraph styles */
+.resume p {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/* Resume Lists */
+.resume ul {
+    text-align: left;
+    padding-left: 50px;
+
+}
+/* Bolds text in span */
+.bold-span {
+    font-weight: bold;
+}
+/* italic text in span */
+.italic-span {
+    font-style: italic;
+}
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+    /* Center Flex content in hero */
+    .hero {
+        justify-content: center;
+    }
+    /* reduce section padding */
+    section {
+        padding: 15px;
+    }
+    /* reduce section title size */
+    .section-title h1 {
+        font-size: 36px;
+    }
+    /* adjusting header navigation link sizes */
+    header nav ul li a {
+        font-size: 18px;
+    }
+    /* Change grid project items to take all available columns */
+    .project-item {
+        grid-column: 1 / span 3;
+    }
+    /* Change opacity of project tiles to 1 */
+    .project-bg {
+        opacity: 1;
+    }
+}
+
+/* MEDIA QUERY FOR TABLETS AND SMALLER */
+@media screen and (max-width: 768px) {
+    /* Center Header Contents */
+    header {
+        justify-content: center;
+        padding: 0px 0px 15px 0;
+    }
+    /* Flex navigation items to center */
+    header nav {
+        flex: 1 100%;
+        justify-content: center;
+    }
+    /* Add additional margin between logo and navigation */
+    header nav ul {
+        margin-top: 5%;
+    }
+    /* change padding of logo */
+    .logo-section h1 a {
+        padding: 5px;
+    }
+    /* Adjust content to fill full row */
+    .section-content {
+        flex: 1 100%;
+    }
+    /* Adjustments to Section titles */
+    .section-title {
+        flex: 1 100%;
+        text-align: center;
+        border-right: none;
+        border-bottom: 3px solid var(--secondary-font-color);
+        justify-content: center;
+        max-width: 50%;
+        margin-bottom: 25px;
+    }
+    /* resume content */
+    .resume {
+        width: 90%;
+    }
+    /* resume paragraph styles */
+    .resume p {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+    /* Adjust main navigation margin */
+    header nav ul {
+        margin-bottom: 15px;
+    }
+    /* Change font size of links in header */
+    header nav ul li a {
+        font-size: 16px;
+    }
+    /* Center flex items in contact links */
+    #contact-me ul {
+        justify-content: center;
+    }
+    /* Contact link adjustments */
+    #contact-me ul li {
+        flex: 1 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+}
